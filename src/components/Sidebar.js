@@ -15,6 +15,24 @@ const Sidebar = ({ isOpen, closeSidebar, onPageChange }) => {
       return;
     }
     
+    // Ürünler Ve Ödeme Planları sayfası için özel işlem
+    if (section === 'Ürünler Ve Ödeme Planları') {
+      if (onPageChange) {
+        onPageChange('odeme-planlari');
+      }
+      closeSidebar();
+      return;
+    }
+    
+    // Oteller sayfası için özel işlem
+    if (section === 'Oteller') {
+      if (onPageChange) {
+        onPageChange('oteller');
+      }
+      closeSidebar();
+      return;
+    }
+    
     // Ana Sayfa için özel işlem
     if (section === 'Ana Sayfa') {
       if (onPageChange) {

@@ -6,6 +6,8 @@ import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import DraggableContactForm from './components/DraggableContactForm';
 import TatilKonumlari from './components/TatilKonumlari';
+import OdemePlanlari from './components/OdemePlanlari';
+import Oteller from './components/Oteller';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -25,6 +27,10 @@ function App() {
     switch (currentPage) {
       case 'tatil-konumlari':
         return <TatilKonumlari />;
+      case 'odeme-planlari':
+        return <OdemePlanlari />;
+      case 'oteller':
+        return <Oteller />;
       case 'home':
       default:
         return (

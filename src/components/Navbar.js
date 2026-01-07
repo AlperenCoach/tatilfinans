@@ -24,6 +24,22 @@ const Navbar = ({ toggleSidebar, onPageChange }) => {
       return;
     }
     
+    // Ürünler Ve Ödeme Planları sayfası için özel işlem
+    if (section === 'Ürünler Ve Ödeme Planları') {
+      if (onPageChange) {
+        onPageChange('odeme-planlari');
+      }
+      return;
+    }
+    
+    // Oteller sayfası için özel işlem
+    if (section === 'Oteller') {
+      if (onPageChange) {
+        onPageChange('oteller');
+      }
+      return;
+    }
+    
     // Ana Sayfa için özel işlem
     if (section === 'Ana Sayfa' || section === 'TatilFinans') {
       if (onPageChange) {
