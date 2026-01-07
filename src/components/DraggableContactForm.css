@@ -1,0 +1,220 @@
+.contact-form-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(26, 64, 136, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(26, 64, 136, 0.5);
+  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+}
+
+.contact-form-toggle svg {
+  font-size: 1.3rem;
+}
+
+.draggable-contact-form {
+  position: fixed;
+  width: 350px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.draggable-contact-form.minimized {
+  height: auto;
+}
+
+.form-header {
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  padding: 15px 20px;
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.form-header-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-icon {
+  font-size: 1.2rem;
+}
+
+.form-header-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.form-action-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.form-action-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.contact-form {
+  padding: 25px;
+  background: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a4088;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.input-icon {
+  font-size: 1rem;
+  color: #1a4088;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1a4088;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(26, 64, 136, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 64, 136, 0.4);
+  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Sürükleme sırasında stil */
+.draggable-contact-form.dragging {
+  opacity: 0.9;
+  cursor: move;
+  transform: scale(1.02);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .draggable-contact-form {
+    width: 90%;
+    max-width: 350px;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+  }
+
+  .contact-form-toggle {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .contact-form-toggle span {
+    display: none;
+  }
+}
+
+/* Animasyonlar */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.draggable-contact-form {
+  animation: slideIn 0.3s ease;
+}
+
