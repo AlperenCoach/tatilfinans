@@ -107,10 +107,30 @@
   justify-content: flex-start;
 }
 
+.fiyat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
 .fiyat-tutar {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: block;
+}
+
+.fiyat-tl {
   font-size: 1.8rem;
   font-weight: 700;
   color: #ffd700;
+}
+
+.fiyat-usd,
+.fiyat-eur {
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
 .otel-icerik {

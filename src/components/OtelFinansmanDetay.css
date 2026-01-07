@@ -1,0 +1,426 @@
+.otel-finansman-detay-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  padding: 100px 20px 60px;
+}
+
+.page-header-section {
+  max-width: 1400px;
+  margin: 0 auto 50px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a4088;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: #0d2a5a;
+  transform: translateX(-5px);
+}
+
+.otel-bilgi-header {
+  text-align: center;
+}
+
+.otel-bilgi-header h1 {
+  color: #1a4088;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.otel-fiyat-bilgi {
+  color: #666;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.takvim-section {
+  max-width: 1400px;
+  margin: 0 auto 50px;
+}
+
+.takvim-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.takvim-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.takvim-icon {
+  font-size: 1.8rem;
+  color: #1a4088;
+}
+
+.takvim-header h3 {
+  color: #1a4088;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tarih-secici {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tarih-input-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.tarih-input-group label {
+  display: block;
+  color: #1a4088;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tarih-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tarih-input:focus {
+  outline: none;
+  border-color: #1a4088;
+  box-shadow: 0 0 0 3px rgba(26, 64, 136, 0.1);
+}
+
+.tarih-arrow {
+  font-size: 2rem;
+  color: #1a4088;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.tarih-bilgi {
+  margin-top: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 12px;
+  border-left: 4px solid #1a4088;
+}
+
+.tarih-bilgi p {
+  color: #1a4088;
+  font-size: 1rem;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.gece-sayisi {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0d2a5a;
+}
+
+/* React DatePicker Custom Styles */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+}
+
+.custom-calendar .react-datepicker {
+  border: 2px solid #1a4088;
+  border-radius: 12px;
+  font-family: 'Manrope', sans-serif;
+  box-shadow: 0 8px 30px rgba(26, 64, 136, 0.2);
+}
+
+.custom-calendar .react-datepicker__header {
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 15px 0;
+}
+
+.custom-calendar .react-datepicker__current-month {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.custom-calendar .react-datepicker__day-name {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.custom-calendar .react-datepicker__day {
+  color: #333;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-calendar .react-datepicker__day:hover {
+  background: #e3f2fd;
+  border-radius: 8px;
+}
+
+.custom-calendar .react-datepicker__day--selected,
+.custom-calendar .react-datepicker__day--in-range {
+  background: #1a4088;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.custom-calendar .react-datepicker__day--in-selecting-range {
+  background: rgba(26, 64, 136, 0.3);
+  color: #1a4088;
+}
+
+.custom-calendar .react-datepicker__day--keyboard-selected {
+  background: #1a4088;
+  color: #ffffff;
+}
+
+.custom-calendar .react-datepicker__day--range-start,
+.custom-calendar .react-datepicker__day--range-end {
+  background: #0d2a5a;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.custom-calendar .react-datepicker__navigation-icon::before {
+  border-color: #ffffff;
+}
+
+.custom-calendar .react-datepicker__navigation:hover *::before {
+  border-color: #ffd700;
+}
+
+.finansman-modelleri-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.modeller-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.finansman-model-kart {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+}
+
+.finansman-model-kart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(26, 64, 136, 0.15);
+  border-color: #1a4088;
+}
+
+.model-baslik h3 {
+  color: #1a4088;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.model-ozellik-butonu {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a4088;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.model-aciklama {
+  margin-bottom: 25px;
+}
+
+.model-aciklama p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.model-aylik-odeme {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.aylik-label {
+  color: #1a4088;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.aylik-tutar {
+  color: #1a4088;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.model-ornek-hesaplama {
+  margin-bottom: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.ornek-baslik {
+  color: #999;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ornek-aciklama {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.model-ozellikler {
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.ozellik-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.check-icon {
+  color: #4caf50;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.detayli-incele-btn {
+  background: #17a2b8;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: auto;
+}
+
+.detayli-incele-btn:hover {
+  background: #1a4088;
+  color: #ffffff;
+  border-color: #1a4088;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 64, 136, 0.3);
+}
+
+.error-message {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.error-message p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .takvim-container {
+    padding: 20px;
+  }
+
+  .takvim-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .tarih-secici {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tarih-arrow {
+    transform: rotate(90deg);
+    margin: 0;
+    align-self: center;
+  }
+
+  .tarih-input-group {
+    min-width: 100%;
+  }
+  .otel-finansman-detay-page {
+    padding: 80px 15px 40px;
+  }
+
+  .otel-bilgi-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .modeller-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .finansman-model-kart {
+    padding: 20px;
+  }
+
+  .aylik-tutar {
+    font-size: 1.8rem;
+  }
+}
+

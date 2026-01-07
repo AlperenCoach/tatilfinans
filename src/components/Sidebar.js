@@ -33,6 +33,24 @@ const Sidebar = ({ isOpen, closeSidebar, onPageChange }) => {
       return;
     }
     
+    // Tasarruf Finansman Modeli Nedir? sayfası için özel işlem
+    if (section === 'Tasarruf Finansman Modeli Nedir?') {
+      if (onPageChange) {
+        onPageChange('tasarruf-finansman');
+      }
+      closeSidebar();
+      return;
+    }
+    
+    // Profil sayfası için özel işlem
+    if (section === 'Profil') {
+      if (onPageChange) {
+        onPageChange('profil');
+      }
+      closeSidebar();
+      return;
+    }
+    
     // Ana Sayfa için özel işlem
     if (section === 'Ana Sayfa') {
       if (onPageChange) {

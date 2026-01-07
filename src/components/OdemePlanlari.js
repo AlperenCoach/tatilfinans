@@ -1,8 +1,66 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiStar, FiWifi, FiCoffee, FiCar, FiUmbrella, FiUsers } from 'react-icons/fi';
 import './OdemePlanlari.css';
 
-const OdemePlanlari = () => {
+const OdemePlanlari = ({ onPageChange }) => {
+  // Döviz kurları - gerçek zamanlı
+  const [kurBilgileri, setKurBilgileri] = useState({
+    usd: 33.50, // USD/TL kuru (varsayılan)
+    eur: 36.20  // EUR/TL kuru (varsayılan)
+  });
+
+  // Gerçek zamanlı döviz kurlarını çek
+  useEffect(() => {
+    const kurlariCek = async () => {
+      try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        
+        const usdToTry = data.rates.TRY || 33.50;
+        const eurToUsd = 1 / data.rates.EUR;
+        const eurToTry = usdToTry / eurToUsd;
+        
+        setKurBilgileri({
+          usd: usdToTry,
+          eur: eurToTry
+        });
+      } catch (error) {
+        console.error('Döviz kurları yüklenirken hata oluştu:', error);
+      }
+    };
+
+    kurlariCek();
+    const interval = setInterval(kurlariCek, 5 * 60 * 1000); // Her 5 dakikada bir güncelle
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  // Fiyat hesaplama fonksiyonu
+  const hesaplaFiyatlar = (usdPrice) => {
+    const usdAmount = parseFloat(usdPrice.replace('$', '').trim());
+    const tlAmount = Math.round(usdAmount * kurBilgileri.usd);
+    const eurAmount = (tlAmount / kurBilgileri.eur).toFixed(2);
+    return {
+      usd: usdAmount,
+      tl: tlAmount,
+      eur: parseFloat(eurAmount)
+    };
+  };
+
+  // Sayı formatlama
+  const formatPara = (amount, paraBirimi) => {
+    if (paraBirimi === 'USD' || paraBirimi === 'EUR') {
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(amount);
+    }
+    return new Intl.NumberFormat('tr-TR', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(amount);
+  };
+
   // 6 farklı otel - her otelden sadece 1 tane
   const oteller = [
     {
@@ -73,9 +131,13 @@ const OdemePlanlari = () => {
     }
   ];
 
-  const handleOdemePlani = (otelId, otelName) => {
-    console.log(`${otelName} için ödeme planı seçiliyor...`);
-    alert(`${otelName} için ödeme planı sayfasına yönlendiriliyor...`);
+  const handleOdemePlani = (otel) => {
+    console.log(`${otel.name} için finansman modelleri sayfasına yönlendiriliyor...`);
+    if (onPageChange) {
+      // Otel bilgilerini localStorage'a kaydet
+      localStorage.setItem('selectedOtel', JSON.stringify(otel));
+      onPageChange('otel-finansman-detay');
+    }
   };
 
   return (
@@ -96,7 +158,16 @@ const OdemePlanlari = () => {
                   <span>{otel.rating}</span>
                 </div>
                 <div className="otel-fiyat">
-                  <span className="fiyat-tutar">{otel.price}</span>
+                  {(() => {
+                    const fiyatlar = hesaplaFiyatlar(otel.price);
+                    return (
+                      <div className="fiyat-container">
+                        <span className="fiyat-tutar fiyat-tl">{formatPara(fiyatlar.tl, 'TL')} ₺ TL'den başlayan fiyatlarla</span>
+                        <span className="fiyat-tutar fiyat-usd">$ {formatPara(fiyatlar.usd, 'USD')}</span>
+                        <span className="fiyat-tutar fiyat-eur">€ {formatPara(fiyatlar.eur, 'EUR')}</span>
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
               
@@ -129,9 +200,9 @@ const OdemePlanlari = () => {
 
                 <button 
                   className="odeme-plani-btn"
-                  onClick={() => handleOdemePlani(otel.id, otel.name)}
+                  onClick={() => handleOdemePlani(otel)}
                 >
-                  Ödeme Planını Belirle
+                  Tatil Finansını Belirle
                 </button>
               </div>
             </div>

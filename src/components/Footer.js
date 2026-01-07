@@ -61,7 +61,7 @@ const Footer = () => {
       
       <div className="footer-bottom">
         <div className="footer-bottom-container">
-          <p>&copy; 2024 TatilFinans. Tüm hakları saklıdır.</p>
+          <p>&copy; 2026 TatilFinans. Tüm hakları saklıdır.</p>
           <div className="footer-links">
             <a href="#privacy">Gizlilik Politikası</a>
             <a href="#terms">Kullanım Şartları</a>

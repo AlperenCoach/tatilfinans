@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiPhone, FiGlobe } from 'react-icons/fi';
 import './Navbar.css';
 
 const Navbar = ({ toggleSidebar, onPageChange }) => {
@@ -40,6 +40,22 @@ const Navbar = ({ toggleSidebar, onPageChange }) => {
       return;
     }
     
+    // Tasarruf Finansman Modeli Nedir? sayfası için özel işlem
+    if (section === 'Tasarruf Finansman Modeli Nedir?') {
+      if (onPageChange) {
+        onPageChange('tasarruf-finansman');
+      }
+      return;
+    }
+    
+    // Profil sayfası için özel işlem
+    if (section === 'Profil') {
+      if (onPageChange) {
+        onPageChange('profil');
+      }
+      return;
+    }
+    
     // Ana Sayfa için özel işlem
     if (section === 'Ana Sayfa' || section === 'TatilFinans') {
       if (onPageChange) {
@@ -56,6 +72,7 @@ const Navbar = ({ toggleSidebar, onPageChange }) => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => handleNavClick('Ana Sayfa')} style={{ cursor: 'pointer' }}>
+          <img src="/images/icon.png" alt="TatilFinans Logo" className="navbar-logo-img" />
           <h2>TatilFinans</h2>
         </div>
         <ul className="navbar-menu">
@@ -68,9 +85,19 @@ const Navbar = ({ toggleSidebar, onPageChange }) => {
           <li><button onClick={() => handleNavClick('Merak Edilenler')}>Merak Edilenler</button></li>
           <li><button onClick={() => handleNavClick('Fuzul Ev')}>Fuzul Ev</button></li>
         </ul>
-        <button className="navbar-toggle" onClick={toggleSidebar}>
-          <FiMenu />
-        </button>
+        <div className="navbar-right">
+          <a href="tel:4446313" className="navbar-phone">
+            <FiPhone className="phone-icon" />
+            <span>444 63 13</span>
+          </a>
+          <a href="#" className="navbar-online-sub">
+            <FiGlobe className="online-icon" />
+            <span>Online Şube</span>
+          </a>
+          <button className="navbar-toggle" onClick={toggleSidebar}>
+            <FiMenu />
+          </button>
+        </div>
       </div>
     </nav>
   );

@@ -5,29 +5,31 @@ import './Slider.css';
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Images klasöründeki resimler ve içerikleri
+  // Images klasöründeki slider resimleri ve içerikleri
   const slides = [
     {
-      image: '/images/1.jpg',
-      title: 'Maldivler\'de Unutulmaz Bir Tatil',
+      image: '/images/slider1-1.jpg',
+      title: 'TatilFinans ile Unutulmaz Bir Tatil',
       description: 'Kristal berraklığında sular ve lüks su üstü oteller',
       slogan: 'Tatil Finansmanı ile Maldivler Tatili Artık Çok Yakın!'
     },
     {
-      image: '/images/2.jpg',
+      image: '/images/slider1-2.jpg',
       title: 'Egzotik Destinasyonlar',
       description: 'Dünya\'nın en güzel tatil cennetlerini keşfedin',
       slogan: 'Tatil Finansmanı ile Hayalinizdeki Maldivler Tatilini Gerçeğe Dönüştürün'
     },
     {
-      image: '/images/3.jpg',
+      image: '/images/slider1-3.jpg',
       title: 'Lüks Tatil Deneyimi',
-      description: 'Size özel tasarlanmış tatil paketleri'
+      description: 'Size özel tasarlanmış tatil paketleri',
+      slogan: 'Tatil Finansmanı ile Ödeme Kolaylığı, Maldivler\'de Unutulmaz Anılar'
     },
     {
-      image: '/images/4.jpg',
+      image: '/images/slider1-4.jpg',
       title: 'Hayalinizdeki Tatil',
-      description: 'Unutulmaz anılar biriktirin'
+      description: 'Unutulmaz anılar biriktirin',
+      slogan: 'Tasarruf Finansman Modeli ile Tatil Hayalinizi Gerçeğe Dönüştürün'
     }
   ];
 
