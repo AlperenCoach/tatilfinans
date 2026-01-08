@@ -173,17 +173,17 @@ const TatilFinansmanForm = ({ onFormSubmit }) => {
             <div className="vade-labels">
               <span>12 Ay</span>
               <span className="selected-vade" style={{ 
-                left: `${((formData.vade - 12) / (60 - 12)) * 100}%` 
+                left: `${((formData.vade - 12) / (36 - 12)) * 100}%` 
               }}>
                 {formData.vade} Ay Vade
               </span>
-              <span>60 Ay</span>
+              <span>36 Ay</span>
             </div>
             <input
               type="range"
               min="12"
-              max="60"
-              step="6"
+              max="36"
+              step="3"
               value={formData.vade}
               onChange={handleSliderChange}
               className="vade-slider"

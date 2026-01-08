@@ -1,202 +1,195 @@
-import React from 'react';
-import { FiStar, FiMapPin, FiCoffee, FiWifi, FiUmbrella, FiUsers, FiCalendar, FiDollarSign } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { FiMapPin, FiUsers, FiCalendar, FiSearch, FiChevronRight } from 'react-icons/fi';
 import './Oteller.css';
 
 const Oteller = () => {
-  // OdemePlanlari sayfasındaki oteller
-  const oteller = [
+  const [searchData, setSearchData] = useState({
+    location: '',
+    dateRange: '',
+    guests: '2 Yetişkin, 0 Çocuk'
+  });
+
+  const handleSearch = () => {
+    console.log('Arama yapılıyor:', searchData);
+    // Arama işlemi burada yapılacak
+  };
+
+  // Kategori verileri
+  const categories = [
     {
-      id: 1,
-      name: 'Siyam World',
-      image: '/images/siyam.jpg',
-      price: '$ 3645',
-      nights: '2 Kişi / 5 Gece',
-      dateRange: '01.05.2026 / 30.09.2026',
-      features: ['Herşey Dahil', 'Deniz Uçağı', 'Ücretsiz İptal'],
-      description: 'Dhigurah adasında, Noonu Atolü\'ndeki 1,5 km\'lik resifin üzerinde yer alan Siyam World Maldives, eğlenceli maceraların yer aldığı 54 hektarlık zengin bir doğal adada ada kaçamağı deneyiminin çok ötesinde bir deneyim sunmaktadır.',
-      rating: 4.8,
-      location: 'Noonu Atolü, Maldivler',
-      amenities: ['Spa & Wellness', 'Dalış Merkezi', 'Çocuk Kulübü', 'Restoranlar', 'Bar & Lounge', 'Fitness Center'],
-      roomTypes: ['Su Üstü Villa', 'Plaj Villası', 'Aile Villası']
+      id: 'yurtici',
+      title: 'Yurtiçi Otelleri',
+      destinations: [
+        { id: 1, name: 'Antalya Otelleri', image: '/images/slider1-1.jpg' },
+        { id: 2, name: 'Side Otelleri', image: '/images/1.jpg' },
+        { id: 3, name: 'Kemer Otelleri', image: '/images/kemer.jpg' },
+        { id: 4, name: 'Bodrum Otelleri', image: '/images/bodrum.jpg' },
+        { id: 5, name: 'Marmaris Otelleri', image: '/images/3.jpg' },
+        { id: 6, name: 'Alanya Otelleri', image: '/images/4.jpg' }
+      ],
+      exploreText: 'Tüm Yurtiçi Otelleri Keşfedin'
     },
     {
-      id: 2,
-      name: 'RAAYA by Atmosphere',
-      image: '/images/raaya.jpg',
-      price: '$ 3166',
-      nights: '2 Kişi / 4 Gece',
-      dateRange: '01.05.2026 / 30.09.2026',
-      features: ['Herşey Dahil', 'Deniz Uçağı', 'Ücretsiz İptal'],
-      description: 'RAAYA Plan™️, konaklamanızı dünya mutfaklarının en iyileri, premium içecekler, spa ve wellness terapileri, okyanus deneyimleri ve özenle seçilmiş sanatsal dokunuşlarla kusursuz bir şekilde birleştirir.',
-      rating: 4.9,
-      location: 'Raa Atolü, Maldivler',
-      amenities: ['Spa & Wellness', 'Sualtı Restoran', 'Sanat Galerisi', 'Premium Bar', 'Yoga Stüdyosu', 'Özel Plaj'],
-      roomTypes: ['Su Üstü Villa', 'Plaj Suites', 'Presidential Villa']
+      id: 'kibris',
+      title: 'Kıbrıs Otelleri',
+      destinations: [
+        { id: 1, name: 'Magosa Otelleri', image: '/images/1.jpg' },
+        { id: 2, name: 'Girne Otelleri', image: '/images/girne.jpg' },
+        { id: 3, name: 'Bafra Otelleri', image: '/images/3.jpg' },
+        { id: 4, name: 'Lefkoşa Otelleri', image: '/images/4.jpg' },
+        { id: 5, name: 'Kıbrıs Balayı Otelleri', image: '/images/kıbrısbalayı.jpg' },
+        { id: 6, name: 'Kıbrıs Uçaklı Paketler', image: '/images/slider1-3.jpg' }
+      ],
+      exploreText: 'Tüm Kıbrıs Otellerini Keşfedin'
     },
     {
-      id: 3,
-      name: 'Pullman Maldives',
-      image: '/images/pullman.jpg',
-      price: '$ 4595',
-      nights: '2 Kişi / 5 Gece',
-      dateRange: '01.04.2026 / 30.09.2026',
-      features: ['Herşey Dahil', 'İç Hat Uçuşu + Hız Teknesi', 'Ücretsiz İptal'],
-      description: 'Güney Maldivler\'de Gaafu Alifu Atolü\'nde bulunan Pullman Maldives Maamutaa, güzel bir tropik ormanın ve doğal lagünün ortasında hizmet vermektedir.',
-      rating: 4.7,
-      location: 'Gaafu Alifu Atolü, Maldivler',
-      amenities: ['Spa & Wellness', 'Tropik Orman Yürüyüşü', 'Lagün Aktiviteleri', 'Fine Dining', 'Wine Bar', 'Fitness'],
-      roomTypes: ['Lagün Villası', 'Plaj Villası', 'Su Üstü Villa']
+      id: 'sehir',
+      title: 'Şehir Otelleri',
+      destinations: [
+        { id: 1, name: 'İstanbul Otelleri', image: '/images/istanbul.jpg' },
+        { id: 2, name: 'Kapadokya Otelleri', image: '/images/kapadokya.jpg' },
+        { id: 3, name: 'İzmir Otelleri', image: '/images/izmir.jpg' },
+        { id: 4, name: 'Selimiye Otelleri', image: '/images/selimiye.jpg' },
+        { id: 5, name: 'Kaş Otelleri', image: '/images/1.jpg' },
+        { id: 6, name: 'Akyaka Otelleri', image: '/images/akyaka.jpg' }
+      ],
+      exploreText: 'Tüm Şehir Otellerini Keşfedin'
     },
     {
-      id: 4,
-      name: 'Adaaran Prestige Vadoo',
-      image: '/images/adaaran.jpg',
-      price: '$ 3520',
-      nights: '2 Kişi / 4 Gece',
-      dateRange: '08.05.2026 / 31.10.2026',
-      features: ['Herşey Dahil', 'Hız Teknesi', 'Ücretsiz İptal'],
-      description: 'Adaaran Prestige Vadoo, Malé Uluslararası Havalimanı\'na yalnızca 15 dakikalık sürat teknesi yolculuğu ile ulaşılabilen yetişkinlere özel bir adadır.',
-      rating: 4.6,
-      location: 'North Male Atolü, Maldivler',
-      amenities: ['Spa & Wellness', 'Dalış Merkezi', 'Yetişkinlere Özel', 'Restoran', 'Bar', 'Sualtı Restoran'],
-      roomTypes: ['Su Üstü Villa', 'Plaj Villası']
-    },
-    {
-      id: 5,
-      name: 'Oblu Xperience Ailafushi',
-      image: '/images/oblu.jpg',
-      price: '$ 2106',
-      nights: '2 Kişi / 4 Gece',
-      dateRange: '01.05.2026 / 31.10.2026',
-      features: ['Herşey Dahil', 'Hız Teknesi', 'Ücretsiz İptal'],
-      description: 'OBLU XPERIENCE Ailafushi, değer odaklı tropik ada yaşamını yükseltiyor, eğlenceli tasarım ve akıllı teknoloji. Maldivlerde Dhivehi dilinde \'Aila\' aile, \'Fushi\' ise ada anlamına gelir.',
-      rating: 4.5,
-      location: 'North Male Atolü, Maldivler',
-      amenities: ['Spa & Wellness', 'Eğlence Aktiviteleri', 'Restoranlar', 'Bar', 'Dalış', 'Su Sporları'],
-      roomTypes: ['Plaj Villası', 'Su Üstü Villa', 'Aile Villası']
-    },
-    {
-      id: 6,
-      name: 'Mercure Maldives Kooddoo Resort',
-      image: '/images/mercure.jpg',
-      price: '$ 3895',
-      nights: '2 Kişi / 5 Gece',
-      dateRange: '01.04.2026 / 30.09.2026',
-      features: ['Herşey Dahil', 'İç Hat Uçuşu', 'Ücretsiz İptal'],
-      description: 'Tesisin su üzerindeki (43 adet) ve sahil kenarındaki (25 adet) konaklama birimlerinin çoğu nefes kesen gün batımı manzarasına sahiptir. Ayrıca 20 adet villada özel havuz vardır. Göz alıcı renkler eşliğinde şık ve çağdaş bir şekilde dekore edilmiş villalarda USB şarj girişleri, evrensel elektrik prizleri ve ücretsiz Wi-Fi erişimi mevcuttur.',
-      rating: 4.4,
-      location: 'Gaafu Dhaalu Atolü, Maldivler',
-      amenities: ['Spa & Wellness', 'Özel Havuzlu Villalar', 'Gün Batımı Manzarası', 'Restoranlar', 'Bar', 'Fitness'],
-      roomTypes: ['Su Üstü Villa', 'Plaj Villası', 'Havuzlu Villa']
+      id: 'yurtdisi',
+      title: 'Yurtdışı Otelleri',
+      destinations: [
+        { id: 1, name: 'Amsterdam Otelleri', image: 'https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=400&h=300&fit=crop&q=80' },
+        { id: 2, name: 'Barselona Otelleri', image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&h=300&fit=crop&q=80' },
+        { id: 3, name: 'Roma Otelleri', image: 'https://images.unsplash.com/photo-1529260830199-42c24126f198?w=400&h=300&fit=crop&q=80' },
+        { id: 4, name: 'Dubai Otelleri', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop&q=80' },
+        { id: 5, name: 'Paris Otelleri', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&h=300&fit=crop&q=80' },
+        { id: 6, name: 'Prag Otelleri', image: 'https://images.unsplash.com/photo-1541849546-216549ae216d?w=400&h=300&fit=crop&q=80' }
+      ],
+      exploreText: 'Tüm Yurtdışı Otelleri Keşfedin'
     }
   ];
 
   return (
     <div className="oteller-page">
-      <div className="page-header">
-        <h1>Oteller</h1>
-        <p>Maldivler'in en lüks ve konforlu otellerini keşfedin</p>
-      </div>
-
-      <div className="oteller-container">
-        <div className="oteller-grid">
-          {oteller.map((otel) => (
-            <div key={otel.id} className="otel-kart-detay">
-              <div className="otel-resim-wrapper">
-                <img src={otel.image} alt={otel.name} className="otel-resim-detay" />
-                <div className="otel-rating-badge">
-                  <FiStar className="star-icon-filled" />
-                  <span>{otel.rating}</span>
-                </div>
-                <div className="otel-fiyat-badge">
-                  <span className="fiyat-sembol">$</span>
-                  <span className="fiyat-rakam">{otel.price.replace('$ ', '')}</span>
-                </div>
+      {/* Hero Section with Search Engine */}
+      <section className="hero-section" style={{ backgroundImage: 'url(/images/slider1-1.jpg)' }}>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1 className="hero-title">Hayalindeki Oteli Faizsiz Taksitle Keşfet</h1>
+          
+          {/* Arama Kutusu */}
+          <div className="search-engine">
+            <div className="search-field">
+              <label className="search-label">Gidilecek Yer</label>
+              <div className="search-input-wrapper">
+                <FiMapPin className="search-icon" />
+                <input 
+                  type="text" 
+                  placeholder="Şehir, Bölge veya Otel Adı" 
+                  className="search-input"
+                  value={searchData.location}
+                  onChange={(e) => setSearchData({...searchData, location: e.target.value})}
+                />
               </div>
-
-              <div className="otel-detay-icerik">
-                <div className="otel-baslik-bolumu">
-                  <h2 className="otel-isim-detay">{otel.name}</h2>
-                  <div className="otel-konum">
-                    <FiMapPin className="konum-icon" />
-                    <span>{otel.location}</span>
-                  </div>
-                </div>
-
-                <div className="otel-bilgi-kutulari">
-                  <div className="bilgi-kutu">
-                    <FiUsers className="bilgi-icon" />
-                    <div>
-                      <span className="bilgi-label">Konaklama</span>
-                      <span className="bilgi-value">{otel.nights}</span>
-                    </div>
-                  </div>
-                  <div className="bilgi-kutu">
-                    <FiCalendar className="bilgi-icon" />
-                    <div>
-                      <span className="bilgi-label">Tarih Aralığı</span>
-                      <span className="bilgi-value-small">{otel.dateRange}</span>
-                    </div>
-                  </div>
-                  <div className="bilgi-kutu">
-                    <FiDollarSign className="bilgi-icon" />
-                    <div>
-                      <span className="bilgi-label">Fiyat</span>
-                      <span className="bilgi-value">{otel.price}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="otel-ozellikler-detay">
-                  <h3>Özellikler</h3>
-                  <div className="ozellikler-grid">
-                    {otel.features.map((feature, index) => (
-                      <div key={index} className="ozellik-badge">
-                        <FiStar className="ozellik-star" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="otel-amenities">
-                  <h3>Otel Olanakları</h3>
-                  <div className="amenities-list">
-                    {otel.amenities.map((amenity, index) => (
-                      <div key={index} className="amenity-item">
-                        <FiCoffee className="amenity-icon" />
-                        <span>{amenity}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="otel-oda-tipleri">
-                  <h3>Oda Tipleri</h3>
-                  <div className="oda-tipleri-list">
-                    {otel.roomTypes.map((room, index) => (
-                      <div key={index} className="oda-tipi-badge">
-                        {room}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="otel-aciklama-detay">
-                  <p>{otel.description}</p>
-                </div>
-
-                <button className="rezervasyon-btn">
-                  Rezervasyon Yap
-                </button>
+            </div>
+            
+            <div className="search-field">
+              <label className="search-label">Giriş - Çıkış Tarihi</label>
+              <div className="search-input-wrapper">
+                <FiCalendar className="search-icon" />
+                <input 
+                  type="text" 
+                  placeholder="Tarih Seçiniz" 
+                  className="search-input"
+                  value={searchData.dateRange}
+                  onChange={(e) => setSearchData({...searchData, dateRange: e.target.value})}
+                />
               </div>
+            </div>
+            
+            <div className="search-field">
+              <label className="search-label">Kişi Sayısı</label>
+              <div className="search-input-wrapper">
+                <FiUsers className="search-icon" />
+                <select 
+                  className="search-select"
+                  value={searchData.guests}
+                  onChange={(e) => setSearchData({...searchData, guests: e.target.value})}
+                >
+                  <option>2 Yetişkin, 0 Çocuk</option>
+                  <option>1 Yetişkin</option>
+                  <option>2 Yetişkin, 1 Çocuk</option>
+                  <option>2 Yetişkin, 2 Çocuk</option>
+                  <option>3 Yetişkin</option>
+                  <option>4 Yetişkin</option>
+                </select>
+              </div>
+            </div>
+            
+            <button className="search-button" onClick={handleSearch}>
+              <FiSearch className="search-button-icon" />
+              ARA
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Content / SEO Section */}
+      <section className="content-seo-section">
+        <h2 className="content-seo-title">Tatil Finansman ile Konaklama Ayrıcalığı</h2>
+        <div className="content-seo-grid">
+          <div className="content-seo-text">
+            <p className="content-seo-paragraph">
+              Tatil Finansman Modeli ile artık otel rezervasyonlarınız için banka kredisi çekmenize gerek yok. Geleneksel yardımlaşma modelini modern turizmle birleştirerek, "faizsiz" ve "peşinatsız" konaklama imkanı sunuyoruz. Hayalinizdeki tatil destinasyonuna, bütçenize uygun taksit planlarıyla ulaşabilirsiniz.
+            </p>
+            <p className="content-seo-paragraph">
+              Maldivler'den Türkiye'nin en güzel kıyılarına, dünya çapında seçkin otellerden butik konaklama tesislerine kadar geniş bir yelpazede hizmet veriyoruz. Rezervasyon sürecinizde esneklik, ödeme planlarınızda rahatlık ve tatil deneyiminizde unutulmaz anılar garantiliyoruz.
+            </p>
+          </div>
+          <div className="content-seo-text">
+            <p className="content-seo-paragraph">
+              Sistemimiz sayesinde, önceden belirlenmiş bir ödeme planıyla tatil rezervasyonunuzu yapabilir, taksitlerinizi düzenli olarak ödeyerek hayalinizdeki tatili gerçekleştirebilirsiniz. Faizsiz finansman modelimiz, İslami finans prensiplerine uygun olarak tasarlanmıştır.
+            </p>
+            <p className="content-seo-paragraph">
+              Müşteri hizmetlerimiz 7/24 hizmetinizdedir. Rezervasyon öncesi ve sonrası tüm sorularınız için uzman ekibimizle iletişime geçebilir, size özel çözümler bulabilirsiniz. Tatil planlarınızı ertelemeyin, bugün rezervasyonunuzu yapın ve hayalinizdeki tatili gerçekleştirin.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Kategoriler Bölümü */}
+      <section className="categories-section">
+        <div className="categories-container">
+          {categories.map((category) => (
+            <div key={category.id} className="category-card">
+              <h2 className="category-title">{category.title}</h2>
+              <div className="destinations-grid">
+                {category.destinations.map((destination) => (
+                  <div key={destination.id} className="destination-card">
+                    <div className="destination-image-wrapper">
+                      <img 
+                        src={destination.image} 
+                        alt={destination.name} 
+                        className="destination-image"
+                      />
+                    </div>
+                    <div className="destination-info">
+                      <h3 className="destination-title">{destination.name}</h3>
+                      <p className="destination-subtitle">{destination.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <button className="explore-button">
+                {category.exploreText} <FiChevronRight className="explore-icon" />
+              </button>
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 };
 
 export default Oteller;
-

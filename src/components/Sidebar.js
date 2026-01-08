@@ -2,7 +2,7 @@ import React from 'react';
 import { FiX, FiHome, FiCreditCard, FiMapPin, FiUser, FiInfo, FiHome as FiHomeIcon, FiDollarSign, FiPackage, FiHelpCircle, FiGlobe } from 'react-icons/fi';
 import './Sidebar.css';
 
-const Sidebar = ({ isOpen, closeSidebar, onPageChange }) => {
+const Sidebar = ({ isOpen, closeSidebar, onPageChange, user }) => {
   const handleMenuClick = (section) => {
     console.log(`${section} sayfasına yönlendiriliyor...`);
     
@@ -24,8 +24,8 @@ const Sidebar = ({ isOpen, closeSidebar, onPageChange }) => {
       return;
     }
     
-    // Oteller sayfası için özel işlem
-    if (section === 'Oteller') {
+    // Tatil Rezervasyonları sayfası için özel işlem
+    if (section === 'Tatil Rezervasyonları' || section === 'Oteller') {
       if (onPageChange) {
         onPageChange('oteller');
       }
@@ -51,6 +51,24 @@ const Sidebar = ({ isOpen, closeSidebar, onPageChange }) => {
       return;
     }
     
+    // Bakiye sayfası için özel işlem
+    if (section === 'Bakiye') {
+      if (onPageChange) {
+        onPageChange('bakiye');
+      }
+      closeSidebar();
+      return;
+    }
+    
+    // Sıkça Sorulan Sorular sayfası için özel işlem
+    if (section === 'Sıkça Sorulan Sorular' || section === 'Merak Edilenler') {
+      if (onPageChange) {
+        onPageChange('merak-edilenler');
+      }
+      closeSidebar();
+      return;
+    }
+    
     // Ana Sayfa için özel işlem
     if (section === 'Ana Sayfa') {
       if (onPageChange) {
@@ -70,11 +88,12 @@ const Sidebar = ({ isOpen, closeSidebar, onPageChange }) => {
     { name: 'Tasarruf Finansman Modeli Nedir?', icon: FiDollarSign, action: () => handleMenuClick('Tasarruf Finansman Modeli Nedir?') },
     { name: 'Ürünler Ve Ödeme Planları', icon: FiPackage, action: () => handleMenuClick('Ürünler Ve Ödeme Planları') },
     { name: 'Tatil Konumları', icon: FiGlobe, action: () => handleMenuClick('Tatil Konumları') },
-    { name: 'Oteller', icon: FiMapPin, action: () => handleMenuClick('Oteller') },
+    { name: 'Tatil Destinasyonları', icon: FiMapPin, action: () => handleMenuClick('Tatil Destinasyonları') },
     { name: 'Profil', icon: FiUser, action: () => handleMenuClick('Profil') },
+    ...(user && user.isLoggedIn ? [{ name: 'Bakiye', icon: FiDollarSign, action: () => handleMenuClick('Bakiye') }] : []),
     { name: 'Biz Kimiz', icon: FiInfo, action: () => handleMenuClick('Biz Kimiz') },
-    { name: 'Merak Edilenler', icon: FiHelpCircle, action: () => handleMenuClick('Merak Edilenler') },
-    { name: 'Fuzul Ev', icon: FiHomeIcon, action: () => handleMenuClick('Fuzul Ev') },
+    { name: 'S.S.S', icon: FiHelpCircle, action: () => handleMenuClick('Sıkça Sorulan Sorular') },
+    
   ];
 
   return (

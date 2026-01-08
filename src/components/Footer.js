@@ -25,7 +25,6 @@ const Footer = () => {
             <li><a href="#payment">Ödeme Planları</a></li>
             <li><a href="#about">Biz Kimiz</a></li>
             <li><a href="#profile">Profil</a></li>
-            <li><a href="#fuzul-ev">Fuzul Ev</a></li>
           </ul>
         </div>
         

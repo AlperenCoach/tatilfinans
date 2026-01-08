@@ -16,14 +16,14 @@
 }
 
 .footer-section h3 {
-  color: #ffd700;
+  color: #ffffff;
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .footer-section h4 {
-  color: #ffd700;
+  color: #ffffff;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -143,19 +143,159 @@
   color: #ffd700;
 }
 
-@media (max-width: 768px) {
+/* Large screens (1920px and above) */
+@media (min-width: 1920px) {
+  .footer-container {
+    max-width: 1600px;
+  }
+  
+  .footer-bottom-container {
+    max-width: 1600px;
+  }
+  
+  .footer-section h3 {
+    font-size: 2rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Desktop (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .footer-container {
+    max-width: 1400px;
+  }
+  
+  .footer-bottom-container {
+    max-width: 1400px;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .footer {
+    padding: 2.5rem 0 0;
+  }
+  
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 15px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.6rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+  
+  .footer-bottom-container {
+    padding: 0 15px;
+  }
+}
+
+/* Mobile (480px - 767px) */
+@media (max-width: 767px) {
+  .footer {
+    padding: 2rem 0 0;
+  }
+  
   .footer-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding: 0 15px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1rem;
   }
   
   .footer-bottom-container {
     flex-direction: column;
     text-align: center;
+    padding: 0 15px;
   }
   
   .footer-links {
     justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0 0;
+  }
+  
+  .footer-container {
+    gap: 1.5rem;
+    padding: 0 10px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.6rem;
+  }
+  
+  .footer-section ul li a {
+    font-size: 0.85rem;
+  }
+  
+  .social-links {
+    gap: 0.8rem;
+  }
+  
+  .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .footer-bottom {
+    padding: 1rem 0;
+  }
+  
+  .footer-bottom-container {
+    padding: 0 10px;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+  
+  .footer-links {
+    gap: 0.8rem;
+  }
+  
+  .footer-links a {
+    font-size: 0.8rem;
   }
 }
 

@@ -96,6 +96,50 @@ const TasarrufFinansman = ({ onPageChange }) => {
           </div>
         </section>
 
+        <section className="finansman-modelleri-section">
+          <h2 className="section-title">Finansman Modelleri</h2>
+          <div className="modeller-grid">
+            <div className="model-kart">
+              <h3>Çekilişsiz (Bireysel) Finansman Modeli</h3>
+              <p>
+                Çekilişsiz bireysel finansman modeline göre teslimat tarihi önden belirlenebilir. İsteğe bağlı önden peşinat ödenebilir. 12-24-36 aya kadar vade imkanından yararlanılabilir. Bu model ile çekilişe katılmadan teslimat tarihi önceden belirlenebilir. Bireysel finansman modeli ile Tatil Paketi satın alınır.
+              </p>
+            </div>
+            <div className="model-kart">
+              <h3>Çekilişli Teslimatta Avantajlı Model Tatil Finansmanı</h3>
+              <p>
+                Belirlenen taksitleri ifade eder. Bu finansman türünde, borçlu her ay belirlenen taksit tutarınca ödeme yapar ve anaparanın belirli bir miktarını öder. Bu ödemeler, kredi süresince sabit kalır; bu da borçlunun ödeme planını önceden tahmin etmesini ve bütçesini daha etkili bir şekilde yönetmesini sağlar.
+              </p>
+            </div>
+            <div className="model-kart">
+              <h3>Çekilişli Tasarruflu Erken Teslim Modeli Tatil Finansmanı</h3>
+              <p>
+                <strong>Çekilişli teslimatta avantajlı model:</strong> Sabit ödemeli avantajlarıyla teslimat sonrasında ödeme artışı yaşanmaz. Örnek hesaplamaya göre belirlenen miktarda ödeme planı belirlenir. Taksit dondurma imkânı bulunmaktadır. Peşinat ödenmesi isteğe bağlıdır. Peşinatlı ya da peşinatsız ödeme yöntemleri ile bütçenize uygun taksitleri belirleyebilirsiniz.
+              </p>
+              <p>
+                <strong>Çekilişli tasarruflu erken teslim modeli:</strong> Sabit artışlı ödeme sistemine sahiptir. Bu sistemin koşullarına göre taksit tutarları her ay aynı oran üzerinden artış göstermektedir. Bu sayede vade sayılarınız kısalabilir ve peşinat ödenmesi ise tamamen isteğe bağlı değerlendirilir. Taksit dondurma imkânı bulunduğunu da belirtmek gerekir. Bütçenize en uygun ödeme seçeneklerini tercih edebilirsiniz. Bütçenize uygun modeller ile aylık ödeme planlarınızı kolaylıkla belirleyebilirsiniz. Böylece bütçenize uygun artışlarla ödemeniz gereken miktarı daha erken bitirebilirsiniz.
+              </p>
+            </div>
+            <div className="model-kart">
+              <h3>Çekilişli Fırsat Modeli Tatil Finansmanı</h3>
+              <p>
+                <strong>Çekilişli fırsat modeli:</strong> Kademeli ödeme yapabilme avantajı sunar. Teslimatı alana kadar sabit taksit ödemesi imkânı gerçekleştirilebilir. Teslimat alındıktan hemen sonra artışları kendiniz belirleme imkânınız bulunur. Böylece vade sayınızı kısaltmanız mümkün olabilir. Çekilişli fırsat modelinde peşinat ödenmesi kişinin tercihine bağlı olarak değerlendirilir.
+              </p>
+              <p>
+                <strong>Çekilişli Fırsat Modeli Tatil Finansmanı:</strong> Çekilişli fırsat tatil finansmanı kampanyasında çekilişe katılmak zorunlu değildir. Kişiler tercihlerine göre bireysel modelleri de tercih edebilir. Aynı zamanda bu modeller sayesinde teslimat tarihini önceden belirleyebilir. Çeşitli avantajlar sağlayan çekilişli fırsat modeli planı şu şekildedir:
+              </p>
+              <ul className="model-avantajlar-listesi">
+                <li>Teslimatınızı alana kadar sabit bir şekilde taksit ödemesi yapabilirsiniz.</li>
+                <li>Teslim alımı sonrası artışlarınızı kendiniz belirleyebilirsiniz.</li>
+                <li>İsteğinize göre vade sayınızı kısaltabilirsiniz.</li>
+                <li>Taksit dondurma imkanına sahip olabilirsiniz.</li>
+                <li>14 gün içerisinde cayma hakkınızı kullanabilirsiniz.</li>
+                <li>Yine isteğinize bağlı olarak peşinat ödeyebilirsiniz.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section className="cta-section">
           <div className="cta-content">
             <h2>Hayalinizdeki Tatili Planlamaya Başlayın</h2>

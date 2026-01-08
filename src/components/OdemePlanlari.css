@@ -244,6 +244,82 @@
   transform: translateY(0);
 }
 
+/* Large screens (1920px and above) */
+@media (min-width: 1920px) {
+  .odeme-planlari-page {
+    padding: 140px 40px 80px;
+  }
+  
+  .page-header {
+    padding: 80px 40px;
+  }
+  
+  .page-header h1 {
+    font-size: 3.5rem;
+  }
+  
+  .page-header p {
+    font-size: 1.4rem;
+  }
+  
+  .oteller-container {
+    max-width: 1600px;
+  }
+  
+  .oteller-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .otel-kart {
+    padding: 35px;
+  }
+  
+  .otel-isim {
+    font-size: 1.6rem;
+  }
+}
+
+/* Desktop (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .odeme-planlari-page {
+    padding: 130px 30px 70px;
+  }
+  
+  .page-header {
+    padding: 70px 30px;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+  }
+  
+  .oteller-container {
+    max-width: 1400px;
+  }
+  
+  .oteller-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .odeme-planlari-page {
+    padding: 100px 20px 50px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .oteller-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;

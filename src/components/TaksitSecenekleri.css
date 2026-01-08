@@ -1,12 +1,13 @@
 .taksit-secenekleri-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-  padding: 100px 20px 60px;
+  padding: 120px 20px 60px;
 }
 
 .page-header-section {
   max-width: 1400px;
   margin: 0 auto 50px;
+  padding-top: 20px;
 }
 
 .back-button {
@@ -85,6 +86,67 @@
   box-shadow: 0 2px 8px rgba(26, 64, 136, 0.3);
 }
 
+.model-aciklamalari-section {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.model-aciklama-kutusu {
+  background: linear-gradient(135deg, #1a4088 0%, #2d5aa0 100%);
+  color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(26, 64, 136, 0.2);
+  margin-bottom: 20px;
+}
+
+.model-aciklama-kutusu h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.model-aciklama-kutusu p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  margin: 0 0 15px 0;
+}
+
+.model-aciklama-kutusu p:last-child {
+  margin-bottom: 0;
+}
+
+.model-aciklama-kutusu p strong {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.model-avantajlar-listesi {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.model-avantajlar-listesi li {
+  padding: 10px 0 10px 30px;
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.model-avantajlar-listesi li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
 .taksit-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -98,6 +160,15 @@
   display: flex;
   gap: 30px;
   align-items: flex-start;
+}
+
+.sidebar-containers-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 350px;
+  position: sticky;
+  top: 120px;
 }
 
 .taksit-tablo-section {
@@ -192,55 +263,929 @@
   font-weight: 500;
 }
 
+/* Tarih Önerisi Container */
+.tarih-onerisi-container {
+  width: 100%;
+  background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffd700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.tarih-onerisi-kapat {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.tarih-onerisi-kapat:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.tarih-onerisi-icerik {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.tarih-onerisi-mesaj {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarih-onerisi-baslik {
+  color: #1a4088;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tarih-onerisi-icon {
+  font-size: 1.3rem;
+  color: #ffd700;
+}
+
+.tarih-onerisi-aciklama {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.tarih-onerisi-aciklama strong {
+  color: #1a4088;
+  font-weight: 700;
+}
+
+.tarih-onerisi-soru {
+  color: #1a4088;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 5px 0 0 0;
+}
+
+.tarih-onerisi-otel-gorsel {
+  position: relative;
+  width: 150px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tarih-onerisi-gorsel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.indirim-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(255, 68, 68, 0.5);
+  z-index: 5;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.tarih-onerisi-butonlar {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.tarih-onerisi-evet-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.3);
+}
+
+.tarih-onerisi-evet-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 64, 136, 0.4);
+  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+}
+
+.tarih-onerisi-hayir-btn {
+  flex: 1;
+  background: #f5f5f5;
+  color: #666;
+  border: 2px solid #e0e0e0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tarih-onerisi-hayir-btn:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+  color: #333;
+}
+
+/* Otel Uygunluk Uyarısı Container */
+.otel-uygunluk-uyarisi-container {
+  width: 100%;
+  background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #4caf50;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.otel-uygunluk-uyarisi-kapat {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.otel-uygunluk-uyarisi-kapat:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.otel-uygunluk-uyarisi-icerik {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.otel-uygunluk-uyarisi-mesaj {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.otel-uygunluk-uyarisi-baslik {
+  color: #1a4088;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.otel-uygunluk-uyarisi-icon {
+  font-size: 1.3rem;
+  color: #4caf50;
+}
+
+.otel-uygunluk-uyarisi-aciklama {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.otel-uygunluk-uyarisi-aciklama strong {
+  color: #1a4088;
+  font-weight: 700;
+}
+
+.otel-uygunluk-uyarisi-otel-gorsel {
+  position: relative;
+  width: 150px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.otel-uygunluk-uyarisi-gorsel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uygunluk-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.5);
+  z-index: 5;
+  animation: pulse 2s infinite;
+}
+
+.otel-uygunluk-uyarisi-butonlar {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.otel-uygunluk-uyarisi-evet-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.otel-uygunluk-uyarisi-evet-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+}
+
+.otel-uygunluk-uyarisi-hayir-btn {
+  flex: 1;
+  background: #f5f5f5;
+  color: #666;
+  border: 2px solid #e0e0e0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.otel-uygunluk-uyarisi-hayir-btn:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+  color: #333;
+}
+
 .ara-odeme-section {
-  width: 300px;
+  width: 100%;
   background: #ffffff;
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid #e0e0e0;
-  position: sticky;
-  top: 120px;
 }
 
-.ara-odeme-btn {
-  width: 100%;
-  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
-  color: #ffffff;
-  border: none;
-  padding: 18px 24px;
-  border-radius: 12px;
-  font-size: 1.2rem;
+.odeme-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.odeme-form-baslik {
+  color: #1a4088;
+  font-size: 1.5rem;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.3);
-  margin-bottom: 25px;
-}
-
-.ara-odeme-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(26, 64, 136, 0.4);
-  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .odeme-bilgi {
-  padding-top: 25px;
-  border-top: 2px solid #f0f0f0;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .toplam-tutar {
   color: #1a4088;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .aylik-tutar-bilgi {
   color: #666;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   margin: 0;
+}
+
+.odeme-input-group {
+  margin-bottom: 20px;
+}
+
+.odeme-label {
+  display: block;
+  color: #1a4088;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.odeme-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a4088;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.odeme-input:focus {
+  outline: none;
+  border-color: #1a4088;
+  box-shadow: 0 0 0 3px rgba(26, 64, 136, 0.1);
+}
+
+.odeme-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.odeme-hint {
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.odeme-yap-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.3);
+  margin-top: 10px;
+}
+
+.odeme-yap-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(26, 64, 136, 0.4);
+  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+}
+
+.odeme-yap-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.voucher-input-group {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.voucher-input {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+
+.voucher-input::placeholder {
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.tatil-uzmani-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tatil-uzmani-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a4088;
+  border: none;
+  padding: 18px 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tatil-uzmani-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+  background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
+}
+
+.tatil-uzmani-icon {
+  font-size: 1.3rem;
+}
+
+.tatil-uzmani-numara {
+  color: #1a4088;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+  width: 100%;
+}
+
+.numara-icon {
+  font-size: 1.2rem;
+  color: #ffd700;
+}
+
+.finans-uzmani-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.finans-uzmani-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  border: none;
+  padding: 18px 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.finans-uzmani-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(26, 64, 136, 0.4);
+  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+}
+
+.finans-uzmani-icon {
+  font-size: 1.3rem;
+}
+
+.finans-uzmani-numara {
+  color: #1a4088;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+  width: 100%;
+}
+
+.ucak-rezervasyonum-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.ucak-rezervasyonum-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.ucak-rezervasyonum-icon {
+  font-size: 1.5rem;
+  color: #1a4088;
+  flex-shrink: 0;
+}
+
+.ucak-rezervasyonum-baslik {
+  color: #1a4088;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ucak-rezervasyonum-icerik {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.ucak-rezervasyonum-bos-mesaj {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ucak-rezervasyonum-ara-btn {
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.3);
+}
+
+.ucak-rezervasyonum-ara-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(26, 64, 136, 0.4);
+  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+}
+
+.otelim-bilgi-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.otelim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.otelim-baslik {
+  color: #1a4088;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.otelim-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #1a4088;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.otelim-link:hover {
+  color: #ffd700;
+  gap: 8px;
+}
+
+.link-icon {
+  font-size: 0.9rem;
+}
+
+.otelim-gorsel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.otelim-gorsel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.otelim-rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(26, 64, 136, 0.9);
+  color: #ffd700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  backdrop-filter: blur(5px);
+}
+
+.rating-star {
+  font-size: 0.9rem;
+  fill: #ffd700;
+  color: #ffd700;
+}
+
+.otelim-adi {
+  color: #1a4088;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.otelim-aciklama {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.otelim-ozellikler {
+  margin-bottom: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.ozellikler-baslik {
+  color: #1a4088;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.ozellikler-listesi {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ozellik-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.ozellik-icon {
+  font-size: 0.9rem;
+  color: #ffd700;
+  flex-shrink: 0;
+}
+
+.otelim-ek-bilgi {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.otelim-ek-bilgi:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.ek-bilgi-icon {
+  font-size: 1rem;
+  color: #1a4088;
+  flex-shrink: 0;
+}
+
+/* Aile Üyesi Ekle Container */
+.aile-uyesi-ekle-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  margin-top: 20px;
+}
+
+.aile-uyesi-ekle-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.aile-uyesi-icon {
+  font-size: 1.5rem;
+  color: #1a4088;
+  flex-shrink: 0;
+}
+
+.aile-uyesi-baslik {
+  color: #1a4088;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.aile-uyesi-ekle-icerik {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aile-uyesi-aciklama {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aile-uyesi-ekle-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  color: #ffffff;
+  border: none;
+  padding: 15px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.3);
+}
+
+.aile-uyesi-ekle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(26, 64, 136, 0.4);
+  background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
+}
+
+/* Tatil Ağacı Container */
+.tatil-agaci-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  margin-top: 20px;
+}
+
+.tatil-agaci-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tatil-agaci-icon {
+  font-size: 1.5rem;
+  color: #1a4088;
+  flex-shrink: 0;
+}
+
+.tatil-agaci-baslik {
+  color: #1a4088;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tatil-agaci-icerik {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tatil-agaci-aciklama {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tatil-agaci-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: #ffffff;
+  border: none;
+  padding: 15px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.tatil-agaci-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(40, 167, 69, 0.4);
+  background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
 }
 
 .taksit-secenekleri-grid {
@@ -438,9 +1383,66 @@
     flex-direction: column;
   }
 
-  .ara-odeme-section {
+  .sidebar-containers-wrapper {
     width: 100%;
     position: static;
+  }
+
+  .ara-odeme-section {
+    width: 100%;
+  }
+
+  .tatil-uzmani-container {
+    width: 100%;
+  }
+
+  .odeme-form-baslik {
+    font-size: 1.3rem;
+  }
+
+  .odeme-input {
+    font-size: 1rem;
+  }
+
+  .tatil-uzmani-numara {
+    font-size: 1.1rem;
+  }
+
+  .finans-uzmani-container {
+    width: 100%;
+  }
+
+  .finans-uzmani-numara {
+    font-size: 1.1rem;
+  }
+
+  .ucak-rezervasyonum-container {
+    width: 100%;
+  }
+
+  .ucak-rezervasyonum-baslik {
+    font-size: 1.2rem;
+  }
+
+  .ucak-rezervasyonum-icon {
+    font-size: 1.3rem;
+  }
+
+  .otelim-bilgi-container {
+    width: 100%;
+  }
+
+
+  .otelim-gorsel-wrapper {
+    height: 180px;
+  }
+
+  .otelim-baslik {
+    font-size: 1.3rem;
+  }
+
+  .otelim-adi {
+    font-size: 1.2rem;
   }
 
   .tablo-header {
@@ -455,6 +1457,225 @@
 
   .taksit-tablo table {
     min-width: 600px;
+  }
+  
+  .tarih-onerisi-icerik {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .tarih-onerisi-otel-gorsel {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .tarih-onerisi-butonlar {
+    flex-direction: column;
+  }
+  
+  .tarih-onerisi-container {
+    padding: 20px;
+  }
+  
+  .tarih-onerisi-baslik {
+    font-size: 1rem;
+  }
+  
+  .tarih-onerisi-aciklama {
+    font-size: 0.9rem;
+  }
+  
+  .tarih-onerisi-soru {
+    font-size: 0.95rem;
+  }
+  
+  .otel-uygunluk-uyarisi-icerik {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .otel-uygunluk-uyarisi-otel-gorsel {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .otel-uygunluk-uyarisi-butonlar {
+    flex-direction: column;
+  }
+  
+  .otel-uygunluk-uyarisi-container {
+    padding: 20px;
+  }
+  
+  .otel-uygunluk-uyarisi-baslik {
+    font-size: 1rem;
+  }
+  
+  .otel-uygunluk-uyarisi-aciklama {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+  .tarih-onerisi-container {
+    padding: 15px;
+  }
+  
+  .tarih-onerisi-icerik {
+    gap: 12px;
+  }
+  
+  .tarih-onerisi-otel-gorsel {
+    height: 150px;
+  }
+  
+  .tarih-onerisi-baslik {
+    font-size: 0.95rem;
+  }
+  
+  .tarih-onerisi-icon {
+    font-size: 1.1rem;
+  }
+  
+  .indirim-badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+  
+  .tarih-onerisi-evet-btn,
+  .tarih-onerisi-hayir-btn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+  
+  .otel-uygunluk-uyarisi-container {
+    padding: 15px;
+  }
+  
+  .otel-uygunluk-uyarisi-icerik {
+    gap: 12px;
+  }
+  
+  .otel-uygunluk-uyarisi-otel-gorsel {
+    height: 150px;
+  }
+  
+  .otel-uygunluk-uyarisi-baslik {
+    font-size: 0.95rem;
+  }
+  
+  .otel-uygunluk-uyarisi-icon {
+    font-size: 1.1rem;
+  }
+  
+  .uygunluk-badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+  
+  .otel-uygunluk-uyarisi-evet-btn,
+  .otel-uygunluk-uyarisi-hayir-btn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}
+
+/* Large screens (1920px and above) */
+@media (min-width: 1920px) {
+  .taksit-secenekleri-page {
+    padding: 140px 40px 80px;
+  }
+  
+  .page-header-section {
+    max-width: 1600px;
+  }
+  
+  .baslik-bilgi h1 {
+    font-size: 3rem;
+  }
+  
+  .otel-bilgi {
+    font-size: 1.4rem;
+  }
+  
+  .taksit-container {
+    max-width: 1600px;
+  }
+  
+  .taksit-tablo-wrapper {
+    gap: 40px;
+  }
+  
+  .sidebar-containers-wrapper {
+    gap: 25px;
+  }
+  
+  .model-aciklamalari-section {
+    max-width: 1600px;
+  }
+  
+  .model-aciklama-kutusu {
+    padding: 40px 50px;
+  }
+  
+  .model-aciklama-kutusu h3 {
+    font-size: 1.8rem;
+  }
+  
+  .model-aciklama-kutusu p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .taksit-secenekleri-page {
+    padding: 130px 30px 70px;
+  }
+  
+  .page-header-section {
+    max-width: 1400px;
+  }
+  
+  .baslik-bilgi h1 {
+    font-size: 2.8rem;
+  }
+  
+  .taksit-container {
+    max-width: 1400px;
+  }
+  
+  .taksit-tablo-wrapper {
+    gap: 35px;
+  }
+  
+  .sidebar-containers-wrapper {
+    gap: 20px;
+  }
+  
+  .model-aciklamalari-section {
+    max-width: 1400px;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .taksit-secenekleri-page {
+    padding: 100px 20px 50px;
+  }
+  
+  .baslik-bilgi h1 {
+    font-size: 2.2rem;
+  }
+  
+  .taksit-tablo-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .sidebar-containers-wrapper {
+    width: 100%;
   }
 }
 

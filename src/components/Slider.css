@@ -52,29 +52,44 @@
 .slide-title {
   color: #ffffff;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 15px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 
+    3px 3px 10px rgba(0, 0, 0, 1),
+    0 0 20px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(0, 0, 0, 0.6),
+    -1px -1px 0 rgba(0, 0, 0, 0.9),
+    1px 1px 0 rgba(0, 0, 0, 0.9);
+  letter-spacing: 1px;
 }
 
 .slide-description {
   color: #ffd700;
   font-size: 1.3rem;
-  font-weight: 500;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 1),
+    0 0 15px rgba(0, 0, 0, 0.8),
+    -1px -1px 0 rgba(0, 0, 0, 0.9),
+    1px 1px 0 rgba(0, 0, 0, 0.9);
   margin-bottom: 15px;
+  letter-spacing: 0.5px;
 }
 
 .slide-slogan {
   color: #ffffff;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 800;
   font-style: italic;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 1),
+    0 0 15px rgba(0, 0, 0, 0.8),
+    -1px -1px 0 rgba(0, 0, 0, 0.9),
+    1px 1px 0 rgba(0, 0, 0, 0.9);
   margin-top: 15px;
   padding-top: 15px;
   border-top: 2px solid rgba(255, 215, 0, 0.5);
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 
@@ -140,9 +155,66 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-@media (max-width: 768px) {
+/* Large screens (1920px and above) */
+@media (min-width: 1920px) {
+  .slider-container {
+    height: 700px;
+  }
+  
+  .slide-title {
+    font-size: 4.5rem;
+  }
+  
+  .slide-description {
+    font-size: 1.5rem;
+  }
+  
+  .slide-slogan {
+    font-size: 1.3rem;
+  }
+}
+
+/* Desktop (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .slider-container {
+    height: 600px;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .slider-container {
+    height: 500px;
+  }
+  
+  .slide-content {
+    padding: 35px 40px;
+  }
+  
+  .slide-title {
+    font-size: 3rem;
+  }
+  
+  .slide-description {
+    font-size: 1.2rem;
+  }
+  
+  .slide-slogan {
+    font-size: 1rem;
+  }
+  
+  .slider-button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile (480px - 767px) */
+@media (max-width: 767px) {
   .slider-container {
     height: 400px;
+    margin-top: 70px;
   }
   
   .slider-button {
@@ -166,18 +238,101 @@
   
   .slide-title {
     font-size: 1.8rem;
+    font-weight: 900;
     margin-bottom: 10px;
+    text-shadow: 
+      2px 2px 8px rgba(0, 0, 0, 1),
+      0 0 15px rgba(0, 0, 0, 0.8),
+      -1px -1px 0 rgba(0, 0, 0, 0.9),
+      1px 1px 0 rgba(0, 0, 0, 0.9);
+    letter-spacing: 0.5px;
   }
   
   .slide-description {
     font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 15px;
+    text-shadow: 
+      2px 2px 6px rgba(0, 0, 0, 1),
+      0 0 12px rgba(0, 0, 0, 0.8),
+      -1px -1px 0 rgba(0, 0, 0, 0.9),
+      1px 1px 0 rgba(0, 0, 0, 0.9);
+    letter-spacing: 0.3px;
   }
   
   .slide-slogan {
     font-size: 0.9rem;
+    font-weight: 800;
     margin-top: 10px;
     padding-top: 10px;
+    text-shadow: 
+      2px 2px 6px rgba(0, 0, 0, 1),
+      0 0 12px rgba(0, 0, 0, 0.8),
+      -1px -1px 0 rgba(0, 0, 0, 0.9),
+      1px 1px 0 rgba(0, 0, 0, 0.9);
+    letter-spacing: 0.5px;
+  }
+  
+  .slider-dots {
+    bottom: 15px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+  .slider-container {
+    height: 350px;
+    margin-top: 60px;
+  }
+  
+  .slider-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .slider-button.prev {
+    left: 5px;
+  }
+  
+  .slider-button.next {
+    right: 5px;
+  }
+  
+  .slide-content {
+    padding: 20px 15px;
+    max-width: 98%;
+  }
+  
+  .slide-title {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  
+  .slide-description {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .slide-slogan {
+    font-size: 0.75rem;
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+  
+  .slider-dots {
+    bottom: 10px;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
   }
 }
 

@@ -1,405 +1,606 @@
 .oteller-page {
   min-height: 100vh;
-  padding-top: 70px;
+  padding-top: 0;
   background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
 }
 
-.page-header {
-  text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
-  color: #ffffff;
-  margin-bottom: 50px;
-}
-
-.page-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #ffd700;
-  font-weight: 700;
-}
-
-.page-header p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.oteller-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px 60px;
-}
-
-.oteller-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 40px;
-}
-
-.otel-kart-detay {
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  display: flex;
-  flex-direction: column;
-}
-
-.otel-kart-detay:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 40px rgba(26, 64, 136, 0.2);
-  border-color: #1a4088;
-}
-
-.otel-resim-wrapper {
+/* Hero Section */
+.hero-section {
   position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-.otel-resim-detay {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.otel-kart-detay:hover .otel-resim-detay {
-  transform: scale(1.1);
-}
-
-.otel-rating-badge {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  color: #ffd700;
-  padding: 10px 15px;
-  border-radius: 25px;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 1rem;
-  z-index: 2;
+  justify-content: center;
+  margin-top: 70px;
 }
 
-.star-icon-filled {
-  font-size: 1.1rem;
-  fill: #ffd700;
-  color: #ffd700;
-}
-
-.otel-fiyat-badge {
+.hero-overlay {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+}
+
+.hero-title {
   color: #ffffff;
-  padding: 15px 25px;
-  border-radius: 15px;
-  display: flex;
-  align-items: baseline;
-  gap: 5px;
-  z-index: 2;
-  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.4);
-}
-
-.fiyat-sembol {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.fiyat-rakam {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #ffd700;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.otel-detay-icerik {
+/* Search Engine */
+.search-engine {
+  background: #ffffff;
   padding: 30px;
-  flex: 1;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.otel-baslik-bolumu {
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 15px;
-}
-
-.otel-isim-detay {
-  color: #1a4088;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.otel-konum {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #666;
-  font-size: 0.95rem;
-}
-
-.konum-icon {
-  color: #1a4088;
-  font-size: 1rem;
-}
-
-.otel-bilgi-kutulari {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.bilgi-kutu {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-left: 3px solid #1a4088;
-  transition: all 0.3s ease;
-}
-
-.bilgi-kutu:hover {
-  background: #e9ecef;
-  transform: translateX(5px);
-}
-
-.bilgi-icon {
-  color: #1a4088;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.bilgi-kutu div {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.bilgi-label {
-  color: #666;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.bilgi-value {
-  color: #1a4088;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.bilgi-value-small {
-  color: #1a4088;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.otel-ozellikler-detay h3,
-.otel-amenities h3,
-.otel-oda-tipleri h3 {
-  color: #1a4088;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.otel-ozellikler-detay h3::before,
-.otel-amenities h3::before,
-.otel-oda-tipleri h3::before {
-  content: '';
-  width: 4px;
-  height: 20px;
-  background: linear-gradient(135deg, #1a4088 0%, #ffd700 100%);
-  border-radius: 2px;
-}
-
-.ozellikler-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.ozellik-badge {
-  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
-  color: #ffffff;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.ozellik-star {
-  font-size: 0.8rem;
-  color: #ffd700;
-}
-
-.amenities-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.amenity-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #666;
-  font-size: 0.9rem;
-  padding: 8px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.amenity-item:hover {
-  background: #f8f9fa;
-  color: #1a4088;
-  transform: translateX(5px);
-}
-
-.amenity-icon {
-  color: #1a4088;
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.oda-tipleri-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.oda-tipi-badge {
-  background: #ffd700;
-  color: #1a4088;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.oda-tipi-badge:hover {
-  background: #1a4088;
-  color: #ffd700;
-  border-color: #ffd700;
-  transform: scale(1.05);
-}
-
-.otel-aciklama-detay {
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  border-left: 4px solid #1a4088;
-  margin-top: 10px;
-}
-
-.otel-aciklama-detay p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.rezervasyon-btn {
+.search-field {
+  flex: 1;
   width: 100%;
-  padding: 16px;
+}
+
+.search-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: #666;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.search-input,
+.search-select {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus,
+.search-select:focus {
+  border-color: #1a4088;
+  box-shadow: 0 0 0 3px rgba(26, 64, 136, 0.1);
+}
+
+.search-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.search-button {
   background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
   color: #ffffff;
+  padding: 14px 32px;
   border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: auto;
-  box-shadow: 0 4px 15px rgba(26, 64, 136, 0.3);
+  margin-top: 10px;
 }
 
-.rezervasyon-btn:hover {
+.search-button:hover {
   background: linear-gradient(135deg, #0d2a5a 0%, #1a4088 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(26, 64, 136, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 64, 136, 0.4);
 }
 
-.rezervasyon-btn:active {
-  transform: translateY(-1px);
+.search-button-icon {
+  font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-  .page-header h1 {
+/* Content / SEO Section */
+.content-seo-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.content-seo-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a4088;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.content-seo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.content-seo-text {
+  color: #666;
+  line-height: 1.8;
+}
+
+.content-seo-paragraph {
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 1rem;
+}
+
+/* Large screens (1920px and above) */
+@media (min-width: 1920px) {
+  .hero-content {
+    max-width: 1600px;
+  }
+  
+  .search-engine {
+    max-width: 1400px;
+    padding: 35px;
+  }
+  
+  .content-seo-section,
+  .categories-section {
+    max-width: 1600px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .content-seo-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Desktop (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .hero-content {
+    max-width: 1400px;
+  }
+  
+  .hero-content {
+    max-width: 1600px;
+  }
+  
+  .search-engine {
+    max-width: 1400px;
+    padding: 40px;
+    gap: 25px;
+  }
+  
+  .search-label {
+    font-size: 0.8rem;
+  }
+  
+  .search-input,
+  .search-select {
+    padding: 15px 15px 15px 45px;
+    font-size: 1.1rem;
+  }
+  
+  .search-button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+  }
+  
+  .content-seo-section,
+  .categories-section {
+    max-width: 1600px;
+    padding: 80px 40px;
+  }
+  
+  .content-seo-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .content-seo-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.9;
+  }
+  
+  .categories-container {
+    gap: 50px;
+  }
+  
+  .category-card {
+    padding: 40px;
+  }
+  
+  .category-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .destinations-grid {
+    gap: 20px;
+  }
+  
+  .destination-image-wrapper {
+    height: 150px;
+  }
+  
+  .destination-title {
+    font-size: 1.1rem;
+  }
+  
+  .destination-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .explore-button {
+    padding: 15px 25px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Desktop (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .hero-section {
+    height: 500px;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-content {
+    max-width: 1400px;
+  }
+  
+  .search-engine {
+    max-width: 1300px;
+    padding: 35px;
+  }
+  
+  .content-seo-section,
+  .categories-section {
+    max-width: 1400px;
+    padding: 70px 30px;
+  }
+  
+  .content-seo-title {
+    font-size: 2.2rem;
+  }
+  
+  .categories-container {
+    gap: 45px;
+  }
+  
+  .category-card {
+    padding: 35px;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero-section {
+    height: 400px;
+  }
+  
+  .hero-title {
     font-size: 2rem;
   }
   
-  .page-header p {
-    font-size: 1rem;
+  .search-engine {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 25px;
   }
   
-  .oteller-grid {
+  .search-button {
+    margin-top: 0;
+  }
+  
+  .content-seo-section {
+    padding: 50px 20px;
+  }
+  
+  .content-seo-title {
+    font-size: 1.8rem;
+  }
+  
+  .categories-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  
+  .destinations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .search-engine {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  
+  .search-button {
+    margin-top: 0;
+  }
+}
+
+/* Categories Section */
+.categories-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.category-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a4088;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.destination-card {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-color: #1a4088;
+}
+
+.destination-image-wrapper {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.destination-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover .destination-image {
+  transform: scale(1.1);
+}
+
+.destination-info {
+  padding: 12px;
+}
+
+.destination-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a4088;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.destination-subtitle {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.explore-button {
+  width: 100%;
+  background: transparent;
+  border: 2px solid #1a4088;
+  color: #1a4088;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.explore-button:hover {
+  background: #1a4088;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 64, 136, 0.3);
+}
+
+.explore-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.explore-button:hover .explore-icon {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 500px;
+    padding: 20px 0;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .search-engine {
+    padding: 20px;
+  }
+  
+  .content-seo-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categories-container {
     grid-template-columns: 1fr;
     gap: 30px;
   }
   
-  .otel-resim-wrapper {
-    height: 250px;
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   
-  .otel-detay-icerik {
-    padding: 20px;
-  }
-  
-  .otel-bilgi-kutulari {
-    grid-template-columns: 1fr;
-  }
-  
-  .amenities-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .otel-isim-detay {
-    font-size: 1.5rem;
+  .destination-image-wrapper {
+    height: 100px;
   }
 }
 
+/* Small Mobile (below 480px) */
 @media (max-width: 480px) {
-  .oteller-container {
-    padding: 0 15px 40px;
+  .hero-section {
+    height: 500px;
+    margin-top: 60px;
   }
   
-  .page-header {
-    padding: 40px 15px;
+  .hero-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
   }
   
-  .otel-fiyat-badge {
-    padding: 12px 20px;
+  .search-engine {
+    padding: 15px;
+    gap: 15px;
   }
   
-  .fiyat-rakam {
-    font-size: 1.5rem;
+  .search-label {
+    font-size: 0.65rem;
+  }
+  
+  .search-input,
+  .search-select {
+    padding: 10px 10px 10px 35px;
+    font-size: 0.9rem;
+  }
+  
+  .search-icon {
+    left: 10px;
+    font-size: 1rem;
+  }
+  
+  .search-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+  
+  .content-seo-section {
+    padding: 30px 15px;
+  }
+  
+  .content-seo-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  
+  .content-seo-paragraph {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .categories-section {
+    padding: 30px 15px;
+  }
+  
+  .category-card {
+    padding: 20px;
+  }
+  
+  .category-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .destination-image-wrapper {
+    height: 140px;
+  }
+  
+  .destination-title {
+    font-size: 0.9rem;
+  }
+  
+  .destination-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .explore-button {
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 }
 

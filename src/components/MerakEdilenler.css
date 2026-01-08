@@ -1,0 +1,174 @@
+.merak-edilenler-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  padding: 120px 20px 60px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(26, 64, 136, 0.3);
+}
+
+.header-icon {
+  font-size: 2.5rem;
+  color: #ffd700;
+}
+
+.page-header h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-header p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.faq-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 20px rgba(26, 64, 136, 0.15);
+  border-color: #1a4088;
+}
+
+.faq-item.open {
+  border-color: #1a4088;
+  box-shadow: 0 4px 20px rgba(26, 64, 136, 0.2);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: rgba(26, 64, 136, 0.05);
+}
+
+.question-text {
+  color: #1a4088;
+  font-size: 1.2rem;
+  font-weight: 600;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.chevron-icon {
+  font-size: 1.5rem;
+  color: #1a4088;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 30px;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 1000px;
+  padding: 0 30px 25px 30px;
+}
+
+.faq-answer p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .merak-edilenler-page {
+    padding: 80px 15px 40px;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .header-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header-icon {
+    font-size: 2rem;
+  }
+
+  .faq-question {
+    padding: 20px;
+  }
+
+  .question-text {
+    font-size: 1.1rem;
+  }
+
+  .faq-item.open .faq-answer {
+    padding: 0 20px 20px 20px;
+  }
+
+  .faq-answer {
+    padding: 0 20px;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+  }
+}
+

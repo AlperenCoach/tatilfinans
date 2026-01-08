@@ -9,27 +9,63 @@ const Slider = () => {
   const slides = [
     {
       image: '/images/slider1-1.jpg',
-      title: 'TatilFinans ile Unutulmaz Bir Tatil',
+      title: 'Tatil Finansmanı ile Ödeme Kolaylığı',
       description: 'Kristal berraklığında sular ve lüks su üstü oteller',
-      slogan: 'Tatil Finansmanı ile Maldivler Tatili Artık Çok Yakın!'
+      slogan: 'Tatil Finansmanı ile Ödeme Kolaylığı'
     },
     {
-      image: '/images/slider1-2.jpg',
-      title: 'Egzotik Destinasyonlar',
+      image: '/images/slider1-2.jpeg',
+      title: 'Planınız Tatil Finansla',
       description: 'Dünya\'nın en güzel tatil cennetlerini keşfedin',
-      slogan: 'Tatil Finansmanı ile Hayalinizdeki Maldivler Tatilini Gerçeğe Dönüştürün'
+      slogan: 'Planınız Tatil Finansla'
     },
     {
-      image: '/images/slider1-3.jpg',
-      title: 'Lüks Tatil Deneyimi',
-      description: 'Size özel tasarlanmış tatil paketleri',
-      slogan: 'Tatil Finansmanı ile Ödeme Kolaylığı, Maldivler\'de Unutulmaz Anılar'
-    },
-    {
-      image: '/images/slider1-4.jpg',
-      title: 'Hayalinizdeki Tatil',
+      image: '/images/slider1-4.jpeg',
+      title: 'Tatil Finansmanı ile Ödeme Kolaylığı',
       description: 'Unutulmaz anılar biriktirin',
-      slogan: 'Tasarruf Finansman Modeli ile Tatil Hayalinizi Gerçeğe Dönüştürün'
+      slogan: 'Tatil Finansmanı ile Ödeme Kolaylığı'
+    },
+    {
+      image: '/images/slider1-5.jpeg',
+      title: 'Faizsiz Taksit İmkanı',
+      description: 'Bütçenize uygun ödeme planlarıyla hayalinizdeki tatili gerçekleştirin',
+      slogan: 'Faizsiz Taksit İmkanı'
+    },
+    {
+      image: '/images/slider1-6.jpg',
+      title: 'Dünya\'nın En Güzel Yerleri',
+      description: 'Maldivler\'den Paris\'e, her bütçeye uygun seçenekler',
+      slogan: 'Dünya\'nın En Güzel Yerleri'
+    },
+    {
+      image: '/images/slider1-7.jpg',
+      title: 'Deniz, Kum, Güneş',
+      description: 'Ege ve Akdeniz\'in eşsiz kıyılarında unutulmaz tatiller',
+      slogan: 'Deniz, Kum, Güneş'
+    },
+    {
+      image: '/images/slider1-10.jpeg',
+      title: 'Güvenli Rezervasyon',
+      description: 'Tüm rezervasyonlarınız güvence altında, esnek iptal seçenekleri',
+      slogan: 'Güvenli Rezervasyon'
+    },
+    {
+      image: '/images/slider1-12.jpeg',
+      title: 'Geniş Destinasyon Seçenekleri',
+      description: 'Yurt içi ve yurt dışı birçok destinasyonda unutulmaz tatil deneyimleri',
+      slogan: 'Geniş Destinasyon Seçenekleri'
+    },
+    {
+      image: '/images/slider1-13.jpeg',
+      title: 'Esnek Ödeme Planları',
+      description: 'Bütçenize uygun taksit seçenekleriyle tatil planlarınızı kolaylaştırın',
+      slogan: 'Esnek Ödeme Planları'
+    },
+    {
+      image: '/images/slider1-14.jpeg',
+      title: 'Premium Konaklama',
+      description: 'Lüks otellerden butik tesislere kadar geniş konaklama seçenekleri',
+      slogan: 'Premium Konaklama'
     }
   ];
 

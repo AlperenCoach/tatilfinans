@@ -97,10 +97,130 @@
   font-size: 1.2rem;
 }
 
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .sidebar {
+    width: 320px;
+  }
+  
+  .sidebar-header {
+    padding: 1.3rem;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .sidebar-menu-item {
+    padding: 0.9rem 1.3rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile (480px - 767px) */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 280px;
+  }
+  
+  .sidebar-header {
+    padding: 1.2rem;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .sidebar-menu-item {
+    padding: 0.85rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .sidebar-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Mobile (below 480px) */
+/* Large screens (1920px and above) */
+@media (min-width: 1920px) {
+  .sidebar {
+    width: 400px;
+  }
+  
+  .sidebar-header {
+    padding: 30px 40px;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 2rem;
+  }
+  
+  .sidebar-menu {
+    padding: 20px 40px;
+  }
+  
+  .sidebar-menu-item {
+    padding: 18px 20px;
+    font-size: 1.1rem;
+  }
+  
+  .sidebar-menu-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* Desktop (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .sidebar {
+    width: 350px;
+  }
+  
+  .sidebar-header {
+    padding: 25px 35px;
+  }
+  
+  .sidebar-menu {
+    padding: 20px 35px;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .sidebar {
+    width: 320px;
+  }
+  
+  .sidebar-header {
+    padding: 20px 30px;
+  }
+  
+  .sidebar-menu {
+    padding: 15px 30px;
+  }
+}
+
 @media (max-width: 480px) {
   .sidebar {
     width: 100%;
     max-width: 280px;
+  }
+  
+  .sidebar-header {
+    padding: 1rem;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .sidebar-menu-item {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .sidebar-icon {
+    font-size: 1rem;
   }
 }
 

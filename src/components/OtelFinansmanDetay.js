@@ -98,7 +98,7 @@ const OtelFinansmanDetay = ({ otelData, onPageChange, onBack }) => {
       id: 1,
       title: 'Çekilişsiz (Bireysel) Finansman Modeli',
       ozellikButonu: 'Tatil Teslimat Tarihini Önden Belirle',
-      aciklama: 'Çekilişsiz model ile bütçenize uygun taksitlerle tatil seyahati sahibi olabilirsiniz.',
+      aciklama: 'Çekilişsiz bireysel finansman modeline göre teslimat tarihi önden belirlenebilir. İsteğe bağlı önden peşinat ödenebilir. 12-24-36 aya kadar vade imkanından yararlanılabilir. Bu model ile çekilişe katılmadan teslimat tarihi önceden belirlenebilir. Bireysel finansman modeli ile Tatil Paketi satın alınır.',
       vade: 12,
       ozellikler: [
         'taksit dondurma imkanı',
@@ -109,9 +109,9 @@ const OtelFinansmanDetay = ({ otelData, onPageChange, onBack }) => {
     },
     {
       id: 2,
-      title: 'Çekilişsiz Modeli',
+      title: 'Çekilişli Teslimatta Avantajlı Model Tatil Finansmanı',
       ozellikButonu: 'Sabit Ödeme',
-      aciklama: 'Sabit ödeme avantajıyla tatil sonrası ödeme artışları yaşamazsınız. Tatil kampanyaları için 12 ile 48 ay arasında taksit imkanı sağlanabilmektedir.',
+      aciklama: 'Belirlenen taksitleri ifade eder. Bu finansman türünde, borçlu her ay belirlenen taksit tutarınca ödeme yapar ve anaparanın belirli bir miktarını öder. Bu ödemeler, kredi süresince sabit kalır; bu da borçlunun ödeme planını önceden tahmin etmesini ve bütçesini daha etkili bir şekilde yönetmesini sağlar.',
       vade: 24,
       ozellikler: [
         '12-48 ay vade seçeneği',
@@ -122,9 +122,9 @@ const OtelFinansmanDetay = ({ otelData, onPageChange, onBack }) => {
     },
     {
       id: 3,
-      title: 'Çekilişli Tasarruflu Erken Teslim Modeli',
+      title: 'Çekilişli Tasarruflu Erken Teslim Modeli Tatil Finansmanı',
       ozellikButonu: 'Sabit Artışlı Ödeme',
-      aciklama: 'Taksit tutarlarınız her ay aynı orandan artsın, vade sayınız kısalsın.',
+      aciklama: 'Çekilişli teslimatta avantajlı model: Sabit ödemeli avantajlarıyla teslimat sonrasında ödeme artışı yaşanmaz. Örnek hesaplamaya göre belirlenen miktarda ödeme planı belirlenir. Taksit dondurma imkânı bulunmaktadır. Peşinat ödenmesi isteğe bağlıdır. Peşinatlı ya da peşinatsız ödeme yöntemleri ile bütçenize uygun taksitleri belirleyebilirsiniz. Çekilişli tasarruflu erken teslim modeli: Sabit artışlı ödeme sistemine sahiptir. Bu sistemin koşullarına göre taksit tutarları her ay aynı oran üzerinden artış göstermektedir. Bu sayede vade sayılarınız kısalabilir ve peşinat ödenmesi ise tamamen isteğe bağlı değerlendirilir. Taksit dondurma imkânı bulunduğunu da belirtmek gerekir. Bütçenize en uygun ödeme seçeneklerini tercih edebilirsiniz. Bütçenize uygun modeller ile aylık ödeme planlarınızı kolaylıkla belirleyebilirsiniz. Böylece bütçenize uygun artışlarla ödemeniz gereken miktarı daha erken bitirebilirsiniz.',
       vade: 36,
       ozellikler: [
         'peşinat (isteğe bağlı)',
@@ -135,28 +135,31 @@ const OtelFinansmanDetay = ({ otelData, onPageChange, onBack }) => {
     },
     {
       id: 4,
-      title: 'Çekilişli Fırsat Modeli',
+      title: 'Çekilişli Fırsat Modeli Tatil Finansmanı',
       ozellikButonu: 'Özel Fırsat',
-      aciklama: 'Çekilişli sistem ile erken teslimat fırsatı yakalayın. Özel kampanya avantajlarından yararlanın.',
+      aciklama: 'Çekilişli fırsat modeli: Kademeli ödeme yapabilme avantajı sunar. Teslimatı alana kadar sabit taksit ödemesi imkânı gerçekleştirilebilir. Teslimat alındıktan hemen sonra artışları kendiniz belirleme imkânınız bulunur. Böylece vade sayınızı kısaltmanız mümkün olabilir. Çekilişli fırsat modelinde peşinat ödenmesi kişinin tercihine bağlı olarak değerlendirilir. Çekilişli Fırsat Modeli Tatil Finansmanı: Çekilişli fırsat tatil finansmanı kampanyasında çekilişe katılmak zorunlu değildir. Kişiler tercihlerine göre bireysel modelleri de tercih edebilir. Aynı zamanda bu modeller sayesinde teslimat tarihini önceden belirleyebilir.',
       vade: 24,
       ozellikler: [
-        'çekiliş avantajı',
-        'erken teslimat fırsatı',
+        'teslimat öncesi sabit ödeme',
+        'teslimat sonrası esnek artış',
+        'vade kısaltma imkanı',
         'peşinat (isteğe bağlı)',
-        'özel kampanya fırsatları'
+        'taksit dondurma imkanı',
+        '14 gün içerisinde cayma hakkı'
       ]
     },
     {
       id: 5,
       title: 'Kademeli Ödeme',
       ozellikButonu: 'Esnek Artış',
-      aciklama: 'Tatil teslimatınızı alana kadar sabit taksit ödemesi yapın. Teslimatınızı aldıktan sonra artışlarınızı siz belirleyin, vade sayınızı kısaltın.',
+      aciklama: 'Kademeli ödeme yapabilme avantajı sunar. Teslimatı alana kadar sabit taksit ödemesi imkânı gerçekleştirilebilir. Teslimat alındıktan hemen sonra artışları kendiniz belirleme imkânınız bulunur. Böylece vade sayınızı kısaltmanız mümkün olabilir. Peşinat ödenmesi kişinin tercihine bağlı olarak değerlendirilir.',
       vade: 36,
       ozellikler: [
         'teslimat öncesi sabit ödeme',
         'teslimat sonrası esnek artış',
         'vade kısaltma imkanı',
-        'peşinat (isteğe bağlı)'
+        'peşinat (isteğe bağlı)',
+        'taksit dondurma imkanı'
       ]
     },
     {
@@ -316,10 +319,6 @@ const OtelFinansmanDetay = ({ otelData, onPageChange, onBack }) => {
               
               <div className="model-ozellik-butonu">
                 <span>{model.ozellikButonu}</span>
-              </div>
-
-              <div className="model-aciklama">
-                <p>{model.aciklama}</p>
               </div>
 
               <div className="model-aylik-odeme">
