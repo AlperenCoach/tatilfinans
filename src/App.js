@@ -16,6 +16,7 @@ import TaksitSecenekleri from './components/TaksitSecenekleri';
 import Bakiye from './components/Bakiye';
 import MerakEdilenler from './components/MerakEdilenler';
 import Istatistikler from './components/Istatistikler';
+import AIChatBubble from './components/AIChatBubble';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -224,6 +225,7 @@ function App() {
       </main>
       <Footer />
       <DraggableContactForm />
+      <AIChatBubble />
     </div>
   );
 }

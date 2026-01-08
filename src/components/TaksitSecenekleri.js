@@ -402,6 +402,38 @@ const TaksitSecenekleri = ({ modelData, otelData, onPageChange, user }) => {
                 </div>
               </div>
               <div className="sidebar-containers-wrapper">
+                {/* Aile Üyesi Ekle Container */}
+                <div className="aile-uyesi-ekle-container">
+                  <div className="aile-uyesi-ekle-header">
+                    <FiUserPlus className="aile-uyesi-icon" />
+                    <h3 className="aile-uyesi-baslik">Aile Üyesi Ekle</h3>
+                  </div>
+                  <div className="aile-uyesi-ekle-icerik">
+                    <p className="aile-uyesi-aciklama">
+                      Aile üyelerinizi ekleyerek onlara da tatil finansmanı imkanı sağlayabilirsiniz.
+                    </p>
+                    <button className="aile-uyesi-ekle-btn">
+                      Aile Üyesi Ekle
+                    </button>
+                  </div>
+                </div>
+
+                {/* Tatil Ağacı Container */}
+                <div className="tatil-agaci-container">
+                  <div className="tatil-agaci-header">
+                    <FiGitBranch className="tatil-agaci-icon" />
+                    <h3 className="tatil-agaci-baslik">Tatil Ağacı</h3>
+                  </div>
+                  <div className="tatil-agaci-icerik">
+                    <p className="tatil-agaci-aciklama">
+                      Tatil Ağacı ile referanslarınızı ekleyin ve özel avantajlardan yararlanın.
+                    </p>
+                    <button className="tatil-agaci-btn">
+                      Tatil Ağacına Git
+                    </button>
+                  </div>
+                </div>
+
                 {/* Tarih Önerisi Bildirimi */}
                 {tarihOnerisiGoster && otelData && (
                   <div className="tarih-onerisi-container">
@@ -650,38 +682,6 @@ const TaksitSecenekleri = ({ modelData, otelData, onPageChange, user }) => {
                   )}
                 </div>
                 )}
-              </div>
-            </div>
-            
-            {/* Aile Üyesi Ekle Container */}
-            <div className="aile-uyesi-ekle-container">
-              <div className="aile-uyesi-ekle-header">
-                <FiUserPlus className="aile-uyesi-icon" />
-                <h3 className="aile-uyesi-baslik">Aile Üyesi Ekle</h3>
-              </div>
-              <div className="aile-uyesi-ekle-icerik">
-                <p className="aile-uyesi-aciklama">
-                  Aile üyelerinizi ekleyerek onlara da tatil finansmanı imkanı sağlayabilirsiniz.
-                </p>
-                <button className="aile-uyesi-ekle-btn">
-                  Aile Üyesi Ekle
-                </button>
-              </div>
-            </div>
-
-            {/* Tatil Ağacı Container */}
-            <div className="tatil-agaci-container">
-              <div className="tatil-agaci-header">
-                <FiGitBranch className="tatil-agaci-icon" />
-                <h3 className="tatil-agaci-baslik">Tatil Ağacı</h3>
-              </div>
-              <div className="tatil-agaci-icerik">
-                <p className="tatil-agaci-aciklama">
-                  Tatil Ağacı ile referanslarınızı ekleyin ve özel avantajlardan yararlanın.
-                </p>
-                <button className="tatil-agaci-btn">
-                  Tatil Ağacına Git
-                </button>
               </div>
             </div>
           </div>

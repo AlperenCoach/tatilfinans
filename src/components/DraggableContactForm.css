@@ -1,20 +1,20 @@
 .contact-form-toggle {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
   background: linear-gradient(135deg, #1a4088 0%, #0d2a5a 100%);
   color: #ffffff;
   border: none;
   padding: 15px 25px;
   border-radius: 50px;
   cursor: pointer;
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 10px;
   font-size: 1rem;
   font-weight: 600;
   box-shadow: 0 4px 20px rgba(26, 64, 136, 0.4);
-  z-index: 1000;
+  z-index: 9997 !important;
   transition: all 0.3s ease;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
@@ -30,12 +30,12 @@
 }
 
 .draggable-contact-form {
-  position: fixed;
+  position: fixed !important;
   width: 350px;
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
+  z-index: 9996 !important;
   overflow: hidden;
   transition: all 0.3s ease;
 }

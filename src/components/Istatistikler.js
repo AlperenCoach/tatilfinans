@@ -3,15 +3,15 @@ import { FiCalendar, FiSmile, FiHome } from 'react-icons/fi';
 import { WiDayHaze } from 'react-icons/wi';
 import './Istatistikler.css';
 
+
+
 const Istatistikler = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    // Sayfa yüklendiğinde kısa bir gecikme ile animasyonu başlat
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 300);
+    // Mock olarak sayfa yüklendiğinde direkt animasyonu başlat
+    setIsVisible(true);
 
     // Ayrıca Intersection Observer da ekle (scroll için)
     const observer = new IntersectionObserver(
@@ -30,7 +30,6 @@ const Istatistikler = () => {
     }
 
     return () => {
-      clearTimeout(timer);
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
@@ -93,7 +92,8 @@ const IstatistikKart = ({ icon: Icon, hedefSayi, metin, animasyonHizi, isVisible
   const [basladi, setBasladi] = useState(false);
 
   useEffect(() => {
-    if (isVisible && !basladi) {
+    // Mock olarak animasyonu direkt başlat (isVisible kontrolü olmadan)
+    if (!basladi) {
       setBasladi(true);
       
       let suresi;
@@ -111,9 +111,6 @@ const IstatistikKart = ({ icon: Icon, hedefSayi, metin, animasyonHizi, isVisible
       }
 
       const fark = hedefSayi - baslangicSayi;
-      const artis = fark / adimSayisi;
-      const adimSuresi = suresi / adimSayisi;
-
       let mevcutSayi = baslangicSayi;
       let frameId;
       let startTime = Date.now();
@@ -134,7 +131,10 @@ const IstatistikKart = ({ icon: Icon, hedefSayi, metin, animasyonHizi, isVisible
         }
       };
       
-      frameId = requestAnimationFrame(animate);
+      // Kısa bir gecikme ile animasyonu başlat (daha belirgin olsun)
+      setTimeout(() => {
+        frameId = requestAnimationFrame(animate);
+      }, 100);
       
       return () => {
         if (frameId) {
@@ -142,7 +142,7 @@ const IstatistikKart = ({ icon: Icon, hedefSayi, metin, animasyonHizi, isVisible
         }
       };
     }
-  }, [isVisible, basladi, hedefSayi, animasyonHizi, baslangicSayi]);
+  }, [basladi, hedefSayi, animasyonHizi, baslangicSayi]);
 
   const formatSayi = (num) => {
     if (num >= 1000) {
